@@ -1,0 +1,35 @@
+/* 自托管中文字体：由 scripts/build-font.mjs 生成子集 */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('/fonts/noto-sans-sc-subset.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --paper: #f6f5f1;
+  --paper-deep: #eeede7;
+  --ink: #111110;
+  --ink-soft: #5d5b55;
+  --ink-muted: #6e6b63;
+  --line: #dedbd2;
+  --line-strong: #c7c3b8;
+  --accent: #ff4d12;
+  --accent-deep: #d93c07;
+  --accent-text: #b53507;
+  --white: #ffffff;
+  --black: #0b0b0a;
+
+  --font-sans: 'Noto Sans SC', 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --pad: clamp(20px, 4.4vw, 72px);
+  --header-h: 76px;
+  --max: 1600px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --radius: 2px;
+}

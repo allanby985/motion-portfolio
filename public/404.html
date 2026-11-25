@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>正在打开…</title>
+    <script>
+      // GitHub Pages 没有 SPA 回退：把 404 路径转成 ?/path 交给首页恢复
+      ;(function () {
+        var path = window.location.pathname
+        var base = path.split('/').slice(0, 2).join('/')
+        var rest = path.slice(base.length).replace(/^\//, '')
+        window.location.replace(
+          window.location.protocol +
+            '//' +
+            window.location.host +
+            base +
+            '/?/' +
+            rest +
+            window.location.search +
+            window.location.hash,
+        )
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>

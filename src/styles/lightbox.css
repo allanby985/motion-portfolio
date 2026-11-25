@@ -1,0 +1,133 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 56px);
+  background: rgba(10, 10, 9, 0.96);
+  animation: lightbox-in 0.28s var(--ease-soft) both;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox__figure {
+  width: min(100%, 1500px);
+  max-height: 100%;
+}
+
+.lightbox__image {
+  width: auto;
+  max-width: 100%;
+  max-height: 78vh;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.lightbox__caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 14px;
+  color: rgba(246, 245, 241, 0.65);
+  font-size: 0.75rem;
+}
+
+.lightbox__caption .mono {
+  color: var(--accent);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: clamp(14px, 2.4vw, 28px);
+  right: clamp(14px, 2.4vw, 28px);
+  display: flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(246, 245, 241, 0.3);
+  border-radius: 50%;
+  color: var(--paper);
+  transition:
+    background-color 0.25s var(--ease-soft),
+    border-color 0.25s var(--ease-soft);
+}
+
+.lightbox__close:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(246, 245, 241, 0.25);
+  border-radius: 50%;
+  color: var(--paper);
+  transform: translateY(-50%);
+  transition:
+    background-color 0.25s var(--ease-soft),
+    border-color 0.25s var(--ease-soft);
+}
+
+.lightbox__nav:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.lightbox__nav--prev {
+  left: clamp(12px, 2.4vw, 32px);
+}
+
+.lightbox__nav--next {
+  right: clamp(12px, 2.4vw, 32px);
+}
+
+@media (max-width: 640px) {
+  .lightbox {
+    padding: 14px;
+  }
+
+  .lightbox__nav {
+    top: auto;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    transform: none;
+  }
+
+  .lightbox__nav--prev {
+    left: 16px;
+  }
+
+  .lightbox__nav--next {
+    right: 16px;
+  }
+
+  .lightbox__image {
+    max-height: 66vh;
+  }
+
+  .lightbox__caption {
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 52px;
+  }
+}
