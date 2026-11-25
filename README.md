@@ -4,6 +4,12 @@
 
 当前提交里包含一套**可替换的示例素材**（4 个虚构项目），用于先确认版式、交互与内容结构；正式作品按下面的流程替换即可。
 
+## 在线预览
+
+**https://allanby985.github.io/motion-portfolio/**
+
+> 这是使用示例素材部署的预览版（GitHub Pages，public 仓库）。正式投递前请先替换个人信息与项目素材；如果在中国大陆访问较慢，建议按「部署」一节的说明换到 Cloudflare Pages + 自有域名。
+
 ---
 
 ## 快速开始
@@ -141,15 +147,15 @@ npm run font
 4. 绑定自己的域名（不需要备案，海外边缘节点）。`*.pages.dev` 直链在大陆经常不稳，**建议绑定域名**再发给 HR。
 5. 项目已带 `public/_redirects`，直接访问 `/work/aura` 不会 404。
 
-### 备选：GitHub Pages
+### 备选：GitHub Pages（当前预览版使用的方式）
 
-免费账户只能用 **public 仓库**开 Pages（站点本身也是公开的）。如果仓库名不是 `用户名.github.io`，构建时指定子路径：
+免费账户只能用 **public 仓库**开 Pages（站点本身也是公开的）。仓库名不是 `用户名.github.io` 时，构建要指定子路径：
 
 ```bash
 VITE_BASE=/仓库名/ npm run build
 ```
 
-把 `dist/` 推到 `gh-pages` 分支，或在仓库 Settings → Pages 里选 GitHub Actions 部署。项目自带 `public/404.html` 处理刷新 404。
+当前仓库已配置 `.github/workflows/deploy.yml`：推送到 `main` 后自动构建并发布到 Pages。项目自带 `public/404.html` 处理刷新 404。
 
 > GitHub Pages 在大陆能访问但不稳定，微信内也可能被拦；只作为镜像/兜底，不建议作为唯一链接。
 
